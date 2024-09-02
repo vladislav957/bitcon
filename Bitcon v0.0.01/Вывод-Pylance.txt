@@ -1,0 +1,10 @@
+﻿Info: (12084) Pylance language server 2023.9.10 (pyright c70adefc) starting
+Info: (12084) Server root directory: c:\program files\microsoft visual studio\2022\professional\common7\ide\extensions\microsoft\python\core\pylance\dist
+Info: (12084) Starting service instance "<default>"
+Info: (12084) Starting service instance "Bitcon.org"
+Info: Un-registering request handler for 15cba2f4-693a-40ce-b659-52aadecd8a8c failed.
+Info: (12084) No source files found.
+Info: (12084) [BG(1)] Long operation: analyzing: c:\Users\LENOVO\Desktop\Bitcon\Bitcon.py\Block.py (3531ms)
+Info: (12084) Setting pythonPath for service "Bitcon.org": "C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\python.exe"
+Info: (12084) Assuming Python version 3.12
+Info: (12084) No source files found.

@@ -1,0 +1,24 @@
+﻿Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "c:\program files\microsoft visual studio\2022\professional\common7\ide\extensions\microsoft\python\core\debugpy\adapter/../..\debugpy\launcher/../..\debugpy\__main__.py", line 39, in <module>
+    cli.main()
+  File "c:\program files\microsoft visual studio\2022\professional\common7\ide\extensions\microsoft\python\core\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 430, in main
+    run()
+  File "c:\program files\microsoft visual studio\2022\professional\common7\ide\extensions\microsoft\python\core\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "c:\program files\microsoft visual studio\2022\professional\common7\ide\extensions\microsoft\python\core\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 320, in run_path
+    code, fname = _get_code_from_file(run_name, path_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\program files\microsoft visual studio\2022\professional\common7\ide\extensions\microsoft\python\core\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 294, in _get_code_from_file
+    code = compile(f.read(), fname, 'exec')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\Desktop\Bitcon\Bitcon.py\cache.py", line 12
+    class Hash Table:
+               ^^^^^
+SyntaxError: invalid syntax
+Поток 0x1 завершился с кодом 0 (0x0).
+Программа "python.exe" завершилась с кодом 4294967295 (0xffffffff).
