@@ -19,7 +19,7 @@ public_key = private_key.public_key()
 message = b''
 
 # Создание хеша SHA-256
-digest = hashes.Hash(hashes.SHA256(), backend=default_backend()).encode('utf-8')
+digest = hashes.Hash(hashes.SHA256(), backend=default_backend()).encode('UTF-8')
 digest.update(message)
 hash_value = digest.finalize()
 
