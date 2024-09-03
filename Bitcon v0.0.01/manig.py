@@ -1,9 +1,13 @@
 import hashlib
+import SHA256
+
+from Crypto.Hash import SHA256
+
 
 def mine_block(previous_hash, transactions, difficulty):
     nonce = 0
     while True:
-        block_contents = f"{previous_hash}{transactions}{nonce}".encode()
+        block_contents = f"{previous_hash}{transactions}{nonce}".encode('UTF-8')
         block_hash = hashlib.sha256(block_contents).hexdigest()
         if block_hash.startswith('0' * difficulty):
             return nonce, block_hash
