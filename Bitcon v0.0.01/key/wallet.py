@@ -4,6 +4,7 @@ from webbrowser import get
 import Blockchain
 import ssl
 import rsa
+import tor
 
 import hashlib
 import SHA256
