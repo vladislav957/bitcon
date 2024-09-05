@@ -15,6 +15,8 @@ from typing import Self
 import random
 import qrcode
 import tor
+import socket
+
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
