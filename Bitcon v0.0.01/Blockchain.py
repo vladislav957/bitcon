@@ -59,6 +59,7 @@ def calculeta_hash(data,previous_hash):
             self.is_backuo = is_backup
         def__repr__(self);
         return f"Block(index: {self.index},data:{self.data},is_backup:{self.is_backup})"
+    
         def calculate_hash(sels):
             # Пример простого хеширования
             return hash.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode()).hexdigest()
