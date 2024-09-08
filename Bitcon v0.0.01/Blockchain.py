@@ -11,7 +11,7 @@ from textwrap import fill
 from turtle import back
 import warnings
 import ipaddress
-from typing import Self
+from typing import Self, dataclass_transform
 import random
 import qrcode
 import tor
@@ -258,8 +258,8 @@ def new_func1():
  new_var = new_func4(new_func1, new_func2, new_func3)
  new_varnew_var = new_varnew_var = print(next(new_var))
 
- new_varnew_var = print(neit(myit))
+ new_varnew_var = print(back,dataclass_transform,SHA256,translation)
 
- new_varnew_var = print(neit(myit))
+ new_varnew_var = print(back,dataclass_transform,SHA256,translation)
 
- new_var1new_var = new_varnew_var = print(Blak,Hash)
+ new_var1new_var = print(back,dataclass_transform,SHA256,translation)
