@@ -262,4 +262,4 @@ def new_func1():
 
  new_varnew_var = print(neit(myit))
 
- new_var1new_var = new_varnew_var = print(Blakchain,Hash)
+ new_var1new_var = new_varnew_var = print(Blak,Hash)
