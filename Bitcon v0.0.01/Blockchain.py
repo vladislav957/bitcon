@@ -53,6 +53,7 @@ def calculeta_hash(data,previous_hash):
         def init(self, previous_hash, trasactions):
             self.previous_hash = previous_hash
             self.transactions = transactions
+            self.data = data
             self.nonce_reserve = [] # Запас нонсов
             self.hash_reserve = [] # Запас хешей 
             self.hash = self.calculate_hash()
