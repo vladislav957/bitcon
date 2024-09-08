@@ -3,7 +3,9 @@ from fileinput import filename
 from functools import total_ordering
 from gettext import translation
 from hmac import new
+from inspect import BlockFinder
 from mimetypes import init
+from multiprocessing.heap import _Block
 from os import error
 import sqlite3
 from sys import version
@@ -16,6 +18,8 @@ import random
 import qrcode
 import tor
 import socket
+import multiprocessing
+from multiprocessing import Process,Queue,Pool,Manager
 
 
 import rsa
@@ -258,8 +262,8 @@ def new_func1():
  new_var = new_func4(new_func1, new_func2, new_func3)
  new_varnew_var = new_varnew_var = print(next(new_var))
 
- new_varnew_var = print(back,dataclass_transform,SHA256,translation)
+ new_varnew_var = print(BlockFinder,dataclass_transform,SHA256,translation)
 
- new_varnew_var = print(back,dataclass_transform,SHA256,translation)
+ new_varnew_var = print(BlockFinder,dataclass_transform,SHA256,translation)
 
- new_var1new_var = print(back,dataclass_transform,SHA256,translation)
+ new_var1new_var = print(BlockFinder,dataclass_transform,SHA256,translation)
