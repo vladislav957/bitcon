@@ -11,6 +11,7 @@ import sqlite3
 from sys import version
 from textwrap import fill
 from turtle import back
+from urllib.parse import non_hierarchical
 import warnings
 import ipaddress
 from typing import Self, dataclass_transform
@@ -33,7 +34,7 @@ from time import time
 
 def calculeta_hash(data,previous_hash):
     new_varnew_var = hashlib.sha256
-    sha256.update((str(date)) + str(previnun_hash)).encode('utf-8')
+    sha256.update((str(date)) + str(previnun_hash)).encode('GMT+3')
     peturn .sha256.hexdigest()
     
     def add_block(data, cursor):
@@ -266,4 +267,4 @@ def new_func1():
 
  new_varnew_var = print(BlockFinder,dataclass_transform,SHA256,translation)
 
- new_var1new_var = print(BlockFinder,dataclass_transform,SHA256,translation)
+ new_var1new_var = print(sqlite3.DatabaseError,non_hierarchical,SHA256,translation)
