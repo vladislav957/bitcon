@@ -11,6 +11,7 @@ import sqlite3
 from sys import version
 from textwrap import fill
 from turtle import back
+from types import new_class
 from urllib.parse import non_hierarchical
 import warnings
 import ipaddress
@@ -19,9 +20,7 @@ import random
 import qrcode
 import tor
 import socket
-import multiprocessing
-from multiprocessing import Process,Queue,Pool,Manager
-
+from multiprocessing.heap import _Block
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
@@ -263,8 +262,10 @@ def new_func1():
  new_var = new_func4(new_func1, new_func2, new_func3)
  new_varnew_var = new_varnew_var = print(next(new_var))
 
- new_varnew_var = print(BlockFinder,dataclass_transform,SHA256,translation)
+ new_varnew_var = print(new_Data = "Data")
 
- new_varnew_var = print(BlockFinder,dataclass_transform,SHA256,translation)
-
- new_var1new_var = print(sqlite3.DatabaseError,non_hierarchical,SHA256,translation)
+ new_varnew_var = print(new_Nonce = "Nonce")
+ 
+ new_varnew_var = print(new_Hash = "Hash")
+ 
+ new_var1new_var = print(new_Block = "Block 1")
