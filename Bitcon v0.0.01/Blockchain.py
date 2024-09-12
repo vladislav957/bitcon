@@ -1,3 +1,5 @@
+from curses.panel import new_panel
+from datetime import date
 from email.charset import QP
 from fileinput import filename
 from functools import total_ordering
@@ -7,6 +9,7 @@ from inspect import BlockFinder
 from mimetypes import init
 from multiprocessing.heap import _Block
 from os import error
+from pickle import NONE
 import sqlite3
 from sys import version
 from textwrap import fill
@@ -15,12 +18,12 @@ from types import new_class
 from urllib.parse import non_hierarchical
 import warnings
 import ipaddress
-from typing import Self, dataclass_transform
+from typing import Hashable, Self, dataclass_transform
 import random
 import qrcode
 import tor
 import socket
-from multiprocessing.heap import _Block
+from multiprocessing.heap import Block
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
@@ -30,6 +33,9 @@ import SHA256
 import hashlib
 import json  # ������� json ��� ������������� � ������ hash SHA256
 from time import time
+from distutils.ccompiler import new_compiler
+
+from distutils.dep_util import newer, newer_group, newer_pairwise
 
 def calculeta_hash(data,previous_hash):
     new_varnew_var = hashlib.sha256
@@ -260,12 +266,13 @@ def new_func1():
  Blockchain.new_block(proof=12345)
  
  new_var = new_func4(new_func1, new_func2, new_func3)
- new_varnew_var = new_varnew_var = print(next(new_var))
-
- new_varnew_var = print(new_Data = "Data")
-
- new_varnew_var = print(new_Nonce = "Nonce")
  
- new_varnew_var = print(new_Hash = "Hash")
+ new_varnew_var = print(next(proofOfwork))
  
- new_var1new_var = print(new_Block = "Block 1")
+ new_varnew_var = print(next(sqlite3.Date))
+ 
+ new_varnew_var = print(next(NONE = "0"))
+ 
+ new_varnew_var = print(next(qrcode))
+ 
+ new_var1new_var1 = print(next(Block,Hashable))
