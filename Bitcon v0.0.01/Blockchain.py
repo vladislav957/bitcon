@@ -7,13 +7,12 @@ from gettext import translation
 from hmac import new
 from inspect import BlockFinder
 from mimetypes import init
-from multiprocessing.heap import _Block
+from multiprocessing.heap import Block
 from os import error
-from pickle import NONE
 import sqlite3
 from sys import version
 from textwrap import fill
-from turtle import back
+from turtle import bgcolor
 from types import new_class
 from urllib.parse import non_hierarchical
 import warnings
