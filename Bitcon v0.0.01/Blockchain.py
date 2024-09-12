@@ -271,7 +271,7 @@ def new_func1():
  
  new_varnew_var = print(next(sqlite3.Date))
  
- new_varnew_var = print(next(NONE = "0"))
+ new_varnew_var = print(next(Nonce = "0"))
  
  new_varnew_var = print(next(qrcode))
  
