@@ -7,6 +7,7 @@ from gettext import translation
 from hmac import new
 from inspect import BlockFinder
 from mimetypes import init
+from operator import index
 from os import error
 import sqlite3
 from sys import version
@@ -34,7 +35,7 @@ import SHA256
 import hashlib
 import json  # ������� json ��� ������������� � ������ hash SHA256
 from time import time
-from distutils.ccompiler import new_compiler
+
 
 
 def calculeta_hash(data,previous_hash):
@@ -43,13 +44,24 @@ def calculeta_hash(data,previous_hash):
     peturn .sha256.hexdigest()
     
     def add_block(data, cursor):
-        cuisor.execute("SELECT hash FROM blockchin ORDER BY timestamp DESC LINIT 1")
-        prievious_hash = cuisor.fetchone()
+        #Получаем хеш предыдущего блока
+        cursor.execute("SELECT hash FROM blockchin ORDER BY timestamp DESC LIMIT 1")
+        prievious_hash = cursor.fetchone()
+        
+        #Создаем новый блок 
+        new_block = Block(index,prievious_hash.data)
+        
+        #Майнить блок(получить корректный nonce)
+        new_block.mine_block(difficulty)
+        
+        #Записываем данные блока в базу данных
+        cursor.execute("INTO blockchain (index,timestamp,data,previous_hash,hash,nonce) VALUES(?,?,?,?,?,?,?)",(new_block.hash,new_block.nonce))
+        
+        #Подтверждаем изменеия
+        print.commit()
         
         if prievious_hash:
             prievious_hash = prievious_hash[0]
-            
-        else:
             new_varnew_var = prievious_hash = new_func()
             
             
