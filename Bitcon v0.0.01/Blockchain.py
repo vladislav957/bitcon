@@ -11,6 +11,7 @@ from os import error
 import sqlite3
 from sys import version
 from textwrap import fill
+from tkinter import ttk
 from turtle import bgcolor
 from types import new_class
 from urllib.parse import non_hierarchical
@@ -23,7 +24,7 @@ import tor
 import socket 
 from curses.panel import new_panel
 from multiprocessing import Process, Queue  # Это стандартные объекты для multiprocessing
-
+import Blockchain
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
