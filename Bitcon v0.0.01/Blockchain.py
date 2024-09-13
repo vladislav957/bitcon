@@ -7,7 +7,6 @@ from gettext import translation
 from hmac import new
 from inspect import BlockFinder
 from mimetypes import init
-from multiprocessing.heap import Block
 from os import error
 import sqlite3
 from sys import version
@@ -21,8 +20,10 @@ from typing import Hashable, Self, dataclass_transform
 import random
 import qrcode
 import tor
-import socket
-from multiprocessing.heap import Block
+import socket 
+from curses.panel import new_panel
+from multiprocessing import Process, Queue  # Это стандартные объекты для multiprocessing
+
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
@@ -34,7 +35,6 @@ import json  # ������� json ��� ����������
 from time import time
 from distutils.ccompiler import new_compiler
 
-from distutils.dep_util import newer, newer_group, newer_pairwise
 
 def calculeta_hash(data,previous_hash):
     new_varnew_var = hashlib.sha256
