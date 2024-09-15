@@ -5,12 +5,16 @@ from fileinput import filename
 from functools import total_ordering
 from gettext import translation
 from hmac import new
+from importlib.metadata import files
 from inspect import BlockFinder
 from mimetypes import init
 from operator import index
-from os import error
+from os import error, write
+import os
+from re import X
 import sqlite3
 from sys import version
+from tabnanny import check
 from textwrap import fill
 from tkinter import ttk
 from turtle import bgcolor
@@ -20,6 +24,7 @@ import warnings
 import ipaddress
 from typing import Hashable, Self, dataclass_transform
 import random
+from webbrowser import get
 import qrcode
 import tor
 import socket 
@@ -41,7 +46,7 @@ from time import time
 def calculeta_hash(data,previous_hash):
     new_varnew_var = hashlib.sha256
     sha256.update((str(date)) + str(previnun_hash)).encode('GMT+3')
-    peturn .sha256.hexdigest()
+    print .sha256.hexdigest()
     
     def add_block(data, cursor):
         #Получаем хеш предыдущего блока
@@ -149,7 +154,7 @@ def calculeta_hash(data,previous_hash):
               self.chain = [self.create_genesis_bloc()]
               self.difficulty = 4
       def create_gensis_block(self):
-          return Block("0",["Genesis Blck"])
+          return Block("0",["Genesis Blck:США => Россия награни экономического калапса. Павела Дурова скора пасадять это ценость ЕС и США "])
       
       def generate_qr(data):
           # Гинератор QR-кода
@@ -185,12 +190,64 @@ def calculeta_hash(data,previous_hash):
             'timestamp': time(),
             'transactions': self.current_transactions,
             'proof': proof,
-            'previous_hash': previous_hash or self.hash(self.chain[-1]),
+            'previous_hash': previous_hash or self.hash(self.chain[-1]), 
         }
+      def get_hash(filename):
+          blockchain_dir = os.curdir + '/blockchain/'
+          file = open(blockchain_dir + filename,'rb').read()
+          
+          return hashlib.sha256(file).hexdigest()
+      
+      def write_block(name,nonce,amount,tansactioons,to_whom,hash=''):
+           
+           blockchain_dir = os.curdir + '/blockchain/' #./blockhain/
+          
+           files = os.listdir(blockchain_dir)
+           files = sorted([int(i) for i in files])
+           
+           last_file = files[-1]
+           
+           filename = str(last_file + 1)
+           
+           previous_hash = get_hash(str(last_file))
+           
+      data = {
+            'name':"",
+            'nonce':"",
+            'transactions':"",
+            'amount': "",
+            'to_whom':"",
+            'hash':"" 
+            }
+      with open(blockchain_dir + filename,'w') as file:
+        json.dump(data,file,indent=X,ensure_ascii=False)
+        
+    def check_inttegrity():
+        # 1.Считать хеш предыдущего блока
+        # 2.Вычислить хеш предыдущего блока
+        # 3.Cравнить полученные данные
+       
+        files = get_files[1:]; "?,?,?,?"
+        
+        results = []
+        
+        for files in files[1:]: "?,?,?,?"
+        f = open(Blockchain_dir + str(files)) # '2'
+        h = json.load(f)['hash']
+        
+        prev_file = str(files -1)
+        acutual_hash = get_hash(prev_file)
 
+        if h == acutual_hash:
+            res = "yes"
+        else:
+            res = "no"
+            
+        results.append({'block':prev_file, 'result':res})
+                  
         self.current_transactions = []
         self.chain.append(block)
-        return block
+        #return block
 
     def new_transaction(self, sender, recipient, amount):
         self.current_transactions.append({
@@ -229,7 +286,7 @@ def calculeta_hash(data,previous_hash):
         self.difficulty = 4
         self.reward = 50.00000
     def create_genesis_block(self):
-        return Blockc("0",[],"Genesis: США => Россия награни экономического калапса ")
+        return Blockc("0",[],"Genesis: США => Россия награни экономического калапса. Павела Дурова скора пасадять это ценость ЕС и США ")
     
     def get_latest_block(self):
         return self.chain[-1]
@@ -287,4 +344,4 @@ def new_func1():
  
  new_varnew_var = print(next(qrcode))
  
- new_var1new_var1 = print(next(Block,Hashable))
+ new_var1new_var = print(next(Block,Hashable))
