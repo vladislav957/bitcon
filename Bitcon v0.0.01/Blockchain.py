@@ -15,6 +15,7 @@ from re import X
 import sqlite3
 from sys import version
 from tabnanny import check
+from tarfile import BLOCKSIZE
 from textwrap import fill
 from tkinter import ttk
 from turtle import bgcolor
@@ -154,7 +155,7 @@ def calculeta_hash(data,previous_hash):
               self.chain = [self.create_genesis_bloc()]
               self.difficulty = 4
       def create_gensis_block(self):
-          return Block("0",["Genesis Blck:США => Россия награни экономического калапса. Павела Дурова скора пасадять это ценость ЕС и США "])
+          return BLOCKSIZE("0",["Genesis Blck:США => Россия награни экономического калапса. Павела Дурова скора пасадять это ценость ЕС и США "])
       
       def generate_qr(data):
           # Гинератор QR-кода
