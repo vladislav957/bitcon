@@ -17,7 +17,7 @@ from sys import version
 from tabnanny import check
 from tarfile import BLOCKSIZE
 from textwrap import fill
-from tkinter import ttk
+from tkinter import Y, ttk
 from turtle import bgcolor
 from types import new_class
 from urllib.parse import non_hierarchical
@@ -201,7 +201,7 @@ def calculeta_hash(data,previous_hash):
       
       def write_block(name,nonce,amount,tansactioons,to_whom,hash=''):
            
-           blockchain_dir = os.curdir + '/blockchain/' #./blockhain/
+           blockchain_dir = os.curdir + '/blockchain/' #./blockchain/
           
            files = os.listdir(blockchain_dir)
            files = sorted([int(i) for i in files])
@@ -221,7 +221,7 @@ def calculeta_hash(data,previous_hash):
             'hash':"" 
             }
       with open(blockchain_dir + filename,'w') as file:
-        json.dump(data,file,indent=X,ensure_ascii=False)
+        json.dump(data,file,indent = X - Y,ensure_ascii=False)
         
     def check_inttegrity():
         # 1.Считать хеш предыдущего блока
@@ -233,7 +233,7 @@ def calculeta_hash(data,previous_hash):
         results = []
         
         for files in files[1:]: "?,?,?,?"
-        f = open(Blockchain_dir + str(files)) # '2'
+        f = open(Blockchain_dir + str(files)) #'2'
         h = json.load(f)['hash']
         
         prev_file = str(files -1)
