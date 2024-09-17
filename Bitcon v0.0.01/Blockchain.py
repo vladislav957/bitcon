@@ -332,7 +332,7 @@ def new_func2(Blockchain, new_func):
 def new_func1():
  Blockchain.new_transaction('sender2', 'recipient1', 100)
  Blockchain.new_transaction('sender2', 'recipient2', 50)
- Blockchain.new_block(proof=12345)
+ Blockchain.new_block(proof="#")
  
  new_var = new_func4(new_func1, new_func2, new_func3)
  
