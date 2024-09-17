@@ -128,8 +128,8 @@ def calculeta_hash(data,previous_hash):
             
             nounce += 1
             
-            id = "00000000000000000000000000000000000000000000000000000000"
-            previous_hash = "00000000000000000000000000000000000000000000000000000000"
+            id = "-1:00000000000000000000000000000000000000000000000000000000"
+            previous_hash = "-1:00000000000000000000000000000000000000000000000000000000"
             data = "Some block data"
             difficulty = 4
             
@@ -296,12 +296,12 @@ def calculeta_hash(data,previous_hash):
         new_block.mine_block(self.difficulty,self.reward)
         self.chain.append(new_block)
         
-        id ="00000000000000000000000000000000000000000000000000000000"  
+        id ="-1:00000000000000000000000000000000000000000000000000000000"  
         new_block = block(Blockchain.get_latest_block().hash, ["Transaction1","Transaction2"],"")
         Blockchain.proof_of_work(new_block)
         
         # Проверка награды
-        print("50.000000:",[tx.amount for tx in Blockchain.chain[-1].transactions if tx.receiver == "00000000000000000000000000000000000000000000000000000000"][0])
+        print("50.000000:",[tx.amount for tx in Blockchain.chain[-1].transactions if tx.receiver == "-1:00000000000000000000000000000000000000000000000000000000"][0])
                           
     @staticmethod
     def hash(block):
