@@ -138,10 +138,10 @@ def calculeta_hash(data,previous_hash):
             print(f'Hash:{block_hash}')  
   
     class Blockchain: 
-      def init(self,chain,transaction,previous_hash,proof=100):
+      def init(self,chain,transaction,previous_hash="",proof=100):
         self.chain = []
         self.current_transactions = []
-        self.new_block(previous_hash=1, proof=100)
+        self.new_block(previous_hash="", proof=100)
         
         # Размер блока данных 8 мегабайт
         block_size = 8 * 1024 *1024
