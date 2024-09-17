@@ -322,7 +322,7 @@ def calculeta_hash(data,previous_hash):
     def valid_proof(last_proof, proof):
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
-        return guess_hash[:4] == "0000" 
+        return guess_hash[:4] == "#" 
    
 def new_func(Blockchain): 
     SyntaxError
