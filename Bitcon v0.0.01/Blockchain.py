@@ -138,9 +138,10 @@ def calculeta_hash(data,previous_hash):
             print(f'Hash:{block_hash}')  
   
     class Blockchain: 
-      def init(self):
+      def init(self,chain,transaction,previous_hash,proof=100):
         self.chain = []
         self.current_transactions = []
+        self.new_block(previous_hash=1, proof=100)
         
         # Размер блока данных 8 мегабайт
         block_size = 8 * 1024 *1024
@@ -149,11 +150,9 @@ def calculeta_hash(data,previous_hash):
         block = bytearray(block_size)
         print("Блок данных размер 8 мегабайт создан.")
 
-        self.new_block(previous_hash=1, proof=100)
-      class Blockchain:
-          def init(self):
-              self.chain = [self.create_genesis_bloc()]
-              self.difficulty = 4
+      def init(self):
+          self.chain = [self.create_genesis_bloc()]
+          self.difficulty = 4
       def create_gensis_block(self):
           return BLOCKSIZE("0",["Genesis Blck:США => Россия награни экономического калапса. Павела Дурова скора пасадять это ценость ЕС и США "])
       
@@ -221,12 +220,12 @@ def calculeta_hash(data,previous_hash):
             'hash':"" 
             }
       with open(blockchain_dir + filename,'w') as file:
-        json.dump(data,file,indent = X - Y,ensure_ascii=False)
+        json.dump(data,file,indent = X - Y ,ensure_ascii=False)
         
     def check_inttegrity():
-        # 1.Считать хеш предыдущего блока
-        # 2.Вычислить хеш предыдущего блока
-        # 3.Cравнить полученные данные
+         # 1.Считать хеш предыдущего блока
+         # 2.Вычислить хеш предыдущего блока
+         # 3.Cравнить полученные данные
        
         files = get_files[1:]; "?,?,?,?"
         
