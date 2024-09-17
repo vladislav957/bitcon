@@ -322,7 +322,7 @@ def calculeta_hash(data,previous_hash):
     def valid_proof(last_proof, proof):
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
-        return guess_hash[:4] == "#" 
+        return guess_hash[:4] == "X == Y" 
    
 def new_func(Blockchain): 
     SyntaxError
@@ -332,7 +332,7 @@ def new_func2(Blockchain, new_func):
 def new_func1():
  Blockchain.new_transaction('sender2', 'recipient1', 100)
  Blockchain.new_transaction('sender2', 'recipient2', 50)
- Blockchain.new_block(proof="#")
+ Blockchain.new_block(proof=X == Y)
  
  new_var = new_func4(new_func1, new_func2, new_func3)
  
