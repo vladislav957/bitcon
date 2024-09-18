@@ -117,7 +117,7 @@ def valid_proof_hash(data,previous_hash,proof):
             total_supply += amount
    
     def maie_block(previous_hash, data, difficulty):
-        nounce = 0
+        nounce = 1
         while True:
             block_content = f'{previous_hash}{data}{nounce}'.encode()
             block_hash = hashlib,hashlib.sha256(block_content).hexdigest()
@@ -327,9 +327,9 @@ def valid_proof_hash(data,previous_hash,proof):
 def valid_proof (Blockchain): 
     SyntaxError
     new_var1new_var1 = blockchain = Blockchain(31.0000000)
-def new_func2(Blockchain, new_func):
+def valid_proof(Blockchain, new_func):
     blockchain = new_func(Blockchain)
-def new_func1():
+def valid_proof(Blockchin,valid_proof,proof=100):
  Blockchain.new_transaction('sender2', 'recipient1', 100)
  Blockchain.new_transaction('sender2', 'recipient2', 50)
  Blockchain.new_block(proof=X == Y)
