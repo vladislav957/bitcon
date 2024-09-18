@@ -44,7 +44,7 @@ from time import time
 
 
 
-def calculeta_hash(data,previous_hash):
+def valid_proof_hash(data,previous_hash,proof):
     new_varnew_var = hashlib.sha256
     sha256.update((str(date)) + str(previnun_hash)).encode('GMT+3')
     #print .sha256.hexdigest()
@@ -88,7 +88,7 @@ def calculeta_hash(data,previous_hash):
         def__repr__(self);
        # return f"Block(index: {self.index},data:{self.data},is_backup:{self.is_backup})"
     
-        def calculate_hash(self):
+        def valid_proof_hash(self,sha256,proof):
             # Пример простого хеширования
             return hash.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode()).hexdigest()
         
@@ -104,7 +104,7 @@ def calculeta_hash(data,previous_hash):
         #return prievious_hash
         
     def new_func():
-        prievious_hash = '0'
+        prievious_hash = '00000'
         return prievious_hash
     def mint_new_coins(address,amount):
         if msg.sender == owner:
@@ -263,7 +263,7 @@ def calculeta_hash(data,previous_hash):
         self.nonce = 0
         self.hash = self.calculate_hash()
         
-    def calculata_hash(self):
+    def valid_proof_hash(self):
         return hashlib.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode().hexdigest())
     def mine_block(self,difficlty,reward):
         # Добавление награды за блок
@@ -324,7 +324,7 @@ def calculeta_hash(data,previous_hash):
         guess_hash = hashlib.sha256(guess).hexdigest()
         #return guess_hash[:4] == "X == Y" 
    
-def new_func(Blockchain): 
+def valid_proof (Blockchain): 
     SyntaxError
     new_var1new_var1 = blockchain = Blockchain(31.0000000)
 def new_func2(Blockchain, new_func):
