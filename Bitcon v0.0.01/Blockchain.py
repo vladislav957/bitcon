@@ -322,7 +322,7 @@ def valid_proof_hash(data,previous_hash,proof):
     def valid_proof(last_proof, proof):
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
-        #return guess_hash[:4] == "X == Y" 
+        return guess_hash[:4] == "X == Y" 
    
 def valid_proof (Blockchain): 
     SyntaxError
@@ -339,6 +339,8 @@ def new_func1():
  new_varnew_var = print(next(proofOfwork))
  
  new_varnew_var = print(next(sqlite3.Date))
+ 
+ new_var1new_var = print(next(X == Y ))
  
  new_varnew_var = print(next(Nonce = "0"))
  
