@@ -212,10 +212,10 @@ def calculeta_hash(data,previous_hash):
            previous_hash = get_hash(str(last_file))
            
       data = {
-            'name':"",
-            'nonce':"",
-            'transactions':"",
-            'amount': "",
+            'name':"Вход X=50.000000 BTC",
+            'nonce':"Выход Y<=X BTC",
+            'transactions':"#1",
+            'amount': "X= >Y",
             'to_whom':"",
             'hash':"" 
             }
