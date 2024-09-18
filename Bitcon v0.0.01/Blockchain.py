@@ -47,7 +47,7 @@ from time import time
 def calculeta_hash(data,previous_hash):
     new_varnew_var = hashlib.sha256
     sha256.update((str(date)) + str(previnun_hash)).encode('GMT+3')
-    print .sha256.hexdigest()
+    #print .sha256.hexdigest()
     
     def add_block(data, cursor):
         #Получаем хеш предыдущего блока
@@ -64,7 +64,7 @@ def calculeta_hash(data,previous_hash):
         cursor.execute("INTO blockchain (index,timestamp,data,previous_hash,hash,nonce) VALUES(?,?,?,?,?,?,?)",(new_block.hash,new_block.nonce))
         
         #Подтверждаем изменеия
-        print.commit()
+        # print.commit()
         
         if prievious_hash:
             prievious_hash = prievious_hash[0]
@@ -86,7 +86,7 @@ def calculeta_hash(data,previous_hash):
             self.hash_reserve = [] # Запас хешей 
             self.is_backuo = is_backup
         def__repr__(self);
-        return f"Block(index: {self.index},data:{self.data},is_backup:{self.is_backup})"
+       # return f"Block(index: {self.index},data:{self.data},is_backup:{self.is_backup})"
     
         def calculate_hash(self):
             # Пример простого хеширования
@@ -101,7 +101,7 @@ def calculeta_hash(data,previous_hash):
                 self.hash_reserve.append(self.hash)
     def new_func():
         new_varnew_var = prievious_hash = new_func()
-        return prievious_hash
+        #return prievious_hash
         
     def new_func():
         prievious_hash = '0'
@@ -134,8 +134,8 @@ def calculeta_hash(data,previous_hash):
             difficulty = 4
             
             nonce, block_hash = mine_block(previous_hash, data, difficulty)
-            print(f'Nonce:{nonce}')
-            print(f'Hash:{block_hash}')  
+            #print(f'Nonce:{nonce}')
+            #print(f'Hash:{block_hash}')  
   
     class Blockchain: 
       def init(self,chain,transaction,previous_hash="",proof=100):
@@ -148,7 +148,7 @@ def calculeta_hash(data,previous_hash):
         
         # Создаем байтовый массивразмеров 8 мегабайт
         block = bytearray(block_size)
-        print("Блок данных размер 8 мегабайт создан.")
+        #print("Блок данных размер 8 мегабайт создан.")
 
       def init(self):
           self.chain = [self.create_genesis_bloc()]
@@ -171,7 +171,7 @@ def calculeta_hash(data,previous_hash):
           img = qr.make_image(fill='block',back_color='white')
           return img
       # Пример использования
-      data = "example data"
+      data = ""
       qr_image = generate_qr(data)
       qr_image.save("qrcode.png")
       
@@ -196,7 +196,7 @@ def calculeta_hash(data,previous_hash):
           blockchain_dir = os.curdir + '/blockchain/'
           file = open(blockchain_dir + filename,'rb').read()
           
-          return hashlib.sha256(file).hexdigest()
+         # return hashlib.sha256(file).hexdigest()
       
       def write_block(name,nonce,amount,tansactioons,to_whom,hash=''):
            
@@ -275,7 +275,7 @@ def calculeta_hash(data,previous_hash):
         self.block_time = 12 * 60 # 12 минут в секундах
         
     def create_genesis_block(sef):
-        return Blck(0,"0",time.time(),"Genesis Block",self.difficulty)
+        #return Blck(0,"0",time.time(),"Genesis Block",self.difficulty)
         
         # Начало майнинга
         while self.hash[:difficlty]!='0'*difficlty:
@@ -306,7 +306,7 @@ def calculeta_hash(data,previous_hash):
     @staticmethod
     def hash(block):
         block_string = json.dumps(block, sort_keys=True).encode()
-        return hashlib.sha256(block_string).hexdigest()
+        #return hashlib.sha256(block_string).hexdigest()
 
     @property
     def last_block(self):
@@ -316,13 +316,13 @@ def calculeta_hash(data,previous_hash):
         proof = 0
         while self.valid_proof(last_proof, proof) is False:
             proof += 1
-        return proof
+       # return proof
 
     @staticmethod
     def valid_proof(last_proof, proof):
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
-        return guess_hash[:4] == "X == Y" 
+        #return guess_hash[:4] == "X == Y" 
    
 def new_func(Blockchain): 
     SyntaxError
