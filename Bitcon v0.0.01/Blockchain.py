@@ -216,7 +216,7 @@ def calculeta_hash(data,previous_hash):
             'nonce':"Выход Y<=X BTC",
             'transactions':"#1",
             'amount': "50.00000 BTC",
-            'to_whom':"Y",
+            'to_whom':" Выход Y",
             'hash':"" 
             }
       with open(blockchain_dir + filename,'w') as file:
