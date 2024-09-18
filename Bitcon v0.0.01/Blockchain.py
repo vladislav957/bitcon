@@ -326,7 +326,7 @@ def valid_proof_hash(data,previous_hash,proof):
    
 def valid_proof (Blockchain): 
     SyntaxError
-    new_var1new_var1 = blockchain = Blockchain(31.0000000)
+    proof = blockchain = Blockchain(31.0000000)
 def valid_proof(Blockchain, new_func):
     blockchain = new_func(Blockchain)
 def valid_proof(Blockchin,valid_proof,proof=100):
