@@ -212,12 +212,12 @@ def valid_proof_hash(data,previous_hash,proof):
            previous_hash = get_hash(str(last_file))
            
       data = {
-            'name':"Вход X=50.000000 BTC",
-            'nonce':"Выход Y<=X BTC",
+            'value':"Вход 50.000000 BTC",
+            'spent':"Выход Y<=X BTC",
             'transactions':"#1",
-            'amount': "50.00000 BTC",
-            'to_whom':" Выход Y",
-            'hash':"" 
+            'spender': "50.00000 BTC",
+            'input':" Выход Y",
+            'hash':"0fc3ceff901760edb9aab12dbd458785d95358dd880f10c6422bb0ababea3b1e" 
             }
       with open(blockchain_dir + filename,'w') as file:
         json.dump(data,file,indent = X - Y ,ensure_ascii=False)
