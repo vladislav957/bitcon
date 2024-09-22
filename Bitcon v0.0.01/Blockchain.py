@@ -32,10 +32,12 @@ import socket
 from curses.panel import new_panel
 from multiprocessing import Process, Queue  # Это стандартные объекты для multiprocessing
 import Blockchain
+import hashlib as hasher
+import datetime as date
+
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
-import ssl
 import QR
 import SHA256
 import hashlib
@@ -262,6 +264,60 @@ def valid_proof_hash(data,previous_hash,proof):
         self.reward_address = rewaed_address
         self.nonce = 0
         self.hash = self.calculate_hash()
+
+    def __init__(self, index, timestamp, data, previous_hash):
+
+          self.index = index
+
+          self.timestamp = timestamp
+
+          self.data = data
+
+          self.previous_hash = previous_hash
+
+          self.hash = self.hash_block()
+
+
+    def hash_block(self):
+
+        sha = hasher.sha256()
+
+        sha.update(str(self.index) + 
+
+               str(self.timestamp) + 
+
+               str(self.data) + 
+
+               str(self.previous_hash))
+
+        return sha.hexdigest()
+
+    def next_block(last_block):
+
+        this_index = last_block.index + 1
+
+        this_timestamp = date.datetime.now()
+
+        this_data = "Hey! I'm block " + str(this_index)
+
+        this_hash = last_block.hash
+
+        blockchain = [create_genesis_block()]
+
+        previous_block = blockchain[0]
+
+        num_of_blocks_to_add = 20
+
+    for i in range(0, num_of_blocks_to_add):
+
+      block_to_add = next_block(previous_block)
+
+      blockchain.append(block_to_add)
+
+      previous_block = block_to_add
+ 
+      #print "Block #{} has been added to the blockchain!".format(block_to_add.index)
+      #print "Hash: {}\n".format(block_to_add.hash)
         
     def valid_proof_hash(self):
         return hashlib.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode().hexdigest())
