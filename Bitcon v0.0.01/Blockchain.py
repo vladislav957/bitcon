@@ -88,7 +88,7 @@ def valid_proof_hash(data,previous_hash,proof):
             self.hash_reserve = [] # Запас хешей 
             self.is_backuo = is_backup
         def__repr__(self);
-       # return f"Block(index: {self.index},data:{self.data},is_backup:{self.is_backup})"
+        return f"Block(index: {self.index},data:{self.data},is_backup:{self.is_backup})"
     
         def valid_proof_hash(self,sha256,proof):
             # Пример простого хеширования
@@ -136,8 +136,8 @@ def valid_proof_hash(data,previous_hash,proof):
             difficulty = 4
             
             nonce, block_hash = mine_block(previous_hash, data, difficulty)
-            #print(f'Nonce:{nonce}')
-            #print(f'Hash:{block_hash}')  
+            print(f'Nonce:{nonce}')
+            print(f'Hash:{block_hash}')  
   
     class Blockchain: 
       def init(self,chain,transaction,previous_hash="",proof=100):
