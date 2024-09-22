@@ -92,7 +92,7 @@ def valid_proof_hash(data,previous_hash,proof):
     
         def valid_proof_hash(self,sha256,proof):
             # Пример простого хеширования
-            return hash.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode()).hexdigest()
+            return hash.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode('GMT+3')).hexdigest()
         
         def mine_block(self, difficulty):
             self.nonce = 0
@@ -121,7 +121,7 @@ def valid_proof_hash(data,previous_hash,proof):
     def maie_block(previous_hash, data, difficulty):
         nounce = 1
         while True:
-            block_content = f'{previous_hash}{data}{nounce}'.encode()
+            block_content = f'{previous_hash}{data}{nounce}'.encode('utf-8')
             block_hash = hashlib,hashlib.sha256(block_content).hexdigest()
             
             # Проверяем, удовлетворяет ли хеш условиям сложности (difficulty)
@@ -320,11 +320,11 @@ def valid_proof_hash(data,previous_hash,proof):
 
       previous_block = block_to_add
  
-      #print "Block #{} has been added to the blockchain!".format(block_to_add.index)
-      #print "Hash: {}\n".format(block_to_add.hash)
+    print(f"Block #1 blockchain!".format(block_to_add.index))
+    print(f"Hash: \n".format(block_to_add.hash))
         
     def valid_proof_hash(self):
-        return hashlib.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode().hexdigest())
+        return hashlib.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode('utf-8').hexdigest())
     def mine_block(self,difficlty,reward):
         # Добавление награды за блок
         reward_transaction = translation(None, self.reward_address,reward)
@@ -335,7 +335,7 @@ def valid_proof_hash(data,previous_hash,proof):
         self.block_time = 12 * 60 # 12 минут в секундах
         
     def create_genesis_block(sef):
-        #return Blck(0,"0",time.time(),"Genesis Block",self.difficulty)
+        #print Blck(0,"0",time.time(),"Genesis Block",self.difficulty)
         
         # Начало майнинга
         while self.hash[:difficlty]!='0'*difficlty:
@@ -360,8 +360,8 @@ def valid_proof_hash(data,previous_hash,proof):
         new_block = block(Blockchain.get_latest_block().hash, ["Transaction1","Transaction2"],"")
         Blockchain.proof_of_work(new_block)
         
-        # Проверка награды
-        print("50.000000:",[tx.amount for tx in Blockchain.chain[-1].transactions if tx.receiver == "-1:00000000000000000000000000000000000000000000000000000000"][0])
+      # Проверка награды
+    print("50.000000:",[tx.amount for tx in Blockchain.chain[-1].transactions if tx.receiver == "-1:00000000000000000000000000000000000000000000000000000000"][0])
                           
     @staticmethod
     def hash(block):
