@@ -34,7 +34,7 @@ from multiprocessing import Process, Queue  # Это стандартные об
 import Blockchain
 import hashlib as hasher
 import datetime as date
-
+import hashlib
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
@@ -308,9 +308,9 @@ def valid_proof_hash(data,previous_hash,proof):
 
     num_of_blocks_to_add = 20
 
-    print .format(block_to_add.index)
+    print(f"Block #1 blockchain!" .format(block_to_add.index))
 
-    print .format(block_to_add.hash)
+    print(f"Hash: \n" .format(block_to_add.hash))
 
     for i in range(0, num_of_blocks_to_add):
 
