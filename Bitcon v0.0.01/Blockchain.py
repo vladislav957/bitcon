@@ -132,7 +132,7 @@ def valid_proof_hash(data,previous_hash,proof):
             
             id = "-1:00000000000000000000000000000000000000000000000000000000"
             previous_hash = "-1:00000000000000000000000000000000000000000000000000000000"
-            data = "Some block data"
+            data = ""
             difficulty = 4
             
             nonce, block_hash = mine_block(previous_hash, data, difficulty)
@@ -302,11 +302,15 @@ def valid_proof_hash(data,previous_hash,proof):
 
         this_hash = last_block.hash
 
-        blockchain = [create_genesis_block()]
+    blockchain = [create_genesis_block()]
 
-        previous_block = blockchain[0]
+    previous_block = blockchain[0]
 
-        num_of_blocks_to_add = 20
+    num_of_blocks_to_add = 20
+
+    print .format(block_to_add.index)
+
+    print .format(block_to_add.hash)
 
     for i in range(0, num_of_blocks_to_add):
 
