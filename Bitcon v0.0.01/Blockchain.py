@@ -39,9 +39,9 @@ import hashlib
 import rsa
 from Crypto.Hash.SHA256 import block_size
 import QR
-import SHA256
+import  SHA256
 import hashlib
-import json  # ������� json ��� ������������� � ������ hash SHA256
+import json  # ������� json ��� ������������� � ������ hash SHA256 
 from time import time
 
 
@@ -276,8 +276,7 @@ def valid_proof_hash(data,previous_hash,proof):
           self.previous_hash = previous_hash
 
           self.hash = self.hash_block()
-
-
+    print(task,date,previous_hash)
     def hash_block(self):
 
         sha = hasher.sha256()
