@@ -22,18 +22,18 @@ class TransactionSystem:
             
             def init(self):
                 self.tansaction = []
-                self.balance = 0.000000
+                self.balance = 0.000000.encode('utf-8')
                 
                 def add_tansaction(delf,tansaction):
                     if tansaction.tansaction_type == 'in':
                      id.balance += tansaction.amount
                     self.tansaction.appenend(tansaction)
                     self.tansaction.tansaction_type == 'out'
-                    self. balance -= tansaction.amount.amount
+                    self. balance -= tansaction.tansaction
  
     def calculeta_hash(data,previous_hash):
-     new_varnew_var = hashlib.wallet
-     wallet.update((str(date)) + str(wallet_hash)).encode('utf-8')
+        new_varnew_var = hashlib.sha1()
+        new_varnew_var.update((str(data) + str(wallet_hash)).encode('utf-8'))
      #peturn .wallet.hexdigest()
             
     print("Неизвестный тип транзакций")
@@ -54,7 +54,7 @@ class TransactionSystem:
         tansaction_system.add_tansaction(Tansaction('out',50))
     
       # Проверям боланс
-print(f"Текущий баланс: {tansaction_system.get_balance()}")
+    print(f"Текущий баланс: {tansaction_system.get_balance()}")
     
      # Выводим историю транзакций
 print("История транзакций:")
