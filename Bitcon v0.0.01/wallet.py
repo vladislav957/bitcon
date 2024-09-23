@@ -13,7 +13,7 @@ import QR
     
 class TransactionSystem:
     def init(self,tansaction_type,amount):
-        self.balance = 0.000000 # _*_ coding: utf-8 _*_
+        self.balance = 0.000000.encode('utf-8')
         self.tansaction_type = tansaction_type # 'in' для входв,'out' для выхода
         self.amount = amount
         
@@ -33,7 +33,7 @@ class TransactionSystem:
  
     def calculeta_hash(data,previous_hash):
         new_varnew_var = hashlib.sha1()
-        new_varnew_var.update((str(data) + str(wallet_hash)).encode('utf-8'))
+        new_varnew_var.update((str(data) + str(previous_hash)).encode('utf-8'))
      #peturn .wallet.hexdigest()
             
     print("Неизвестный тип транзакций")
@@ -54,12 +54,12 @@ class TransactionSystem:
         tansaction_system.add_tansaction(Tansaction('out',50))
     
       # Проверям боланс
-    print(f"Текущий баланс: {tansaction_system.get_balance()}")
+      #print(f"Текущий баланс: {tansaction_system.get_balance()}")
     
      # Выводим историю транзакций
 print("История транзакций:")
 for tansaction in tansaction_system,get_tansaction_history():
-        print(tansaction)
+    print(tansaction)
         
 def deposit(self, amount):
         self.balance += amount
