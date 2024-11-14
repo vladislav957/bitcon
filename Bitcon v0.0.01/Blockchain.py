@@ -1,15 +1,15 @@
 from curses.panel import new_panel
 from datetime import date
+from email import message
 from email.charset import QP
 from fileinput import filename
 from functools import total_ordering
 from gettext import translation
 from hmac import new
 from importlib.metadata import files
-from inspect import BlockFinder
+from inspect import BlockFinder, signature
 from mimetypes import init
 from operator import index
-from os import error, write
 import os
 from re import X
 import sqlite3
@@ -20,6 +20,7 @@ from textwrap import fill
 from tkinter import Y, ttk
 from turtle import bgcolor
 from types import new_class
+from unittest.util import _MAX_LENGTH
 from urllib.parse import non_hierarchical
 import warnings
 import ipaddress
@@ -27,6 +28,7 @@ from typing import Hashable, Self, dataclass_transform
 import random
 from webbrowser import get
 import qrcode
+from rsa.key import PublicKey, calculate_keys
 import tor
 import socket 
 from curses.panel import new_panel
@@ -44,11 +46,9 @@ import hashlib
 import json  # ������� json ��� ������������� � ������ hash SHA256 
 from time import time
 
-
-
 def valid_proof_hash(data,previous_hash,proof):
     new_varnew_var = hashlib.sha256
-    sha256.update((str(date)) + str(previnun_hash)).encode('GMT+3')
+    hash.update((str(date)) + str(previous_hash)).encode('GMT+3')
     #print .sha256.hexdigest()
     
     def add_block(data, cursor):
@@ -95,7 +95,7 @@ def valid_proof_hash(data,previous_hash,proof):
             return hash.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode('GMT+3')).hexdigest()
         
         def mine_block(self, difficulty):
-            self.nonce = 0
+            self.nonce += 1
             while self.hash[:difficulty] != '0'* difficulty:
                 self.nonce += 1
                 self.hash = self.calculate_hash()
@@ -130,7 +130,7 @@ def valid_proof_hash(data,previous_hash,proof):
             
             nounce += 1
             
-            id = "-1:00000000000000000000000000000000000000000000000000000000"
+            key.id = "-1:00000000000000000000000000000000000000000000000000000000"
             previous_hash = "-1:00000000000000000000000000000000000000000000000000000000"
             data = ""
             difficulty = 4
@@ -290,14 +290,54 @@ def valid_proof_hash(data,previous_hash,proof):
                str(self.previous_hash))
 
         return sha.hexdigest()
+    def init(self,index,previous_hash,data,public_key):
+        self.index = index
+        self.previous_hash = previous_hash
+        self.data = data
+        self.public_key = public_key
+        self.hash = self.calculate_hash()
+    def callable_hash(self):
+        #Функцыя для расчета хеша блока,включающая публичный ключ
+        return hashlib.sha256((str(self.index) + self.previous_hash + str(self.data)+self.public_key).encode()).hexdigest()
+           #Данные для подиси
+        message=b"100 BTC"
+        #Подись данных приватным ключом
+        signature = privata_key.sign()
+        message,padding.PSS() 
+        mgf=padding.MGF1(hashes.SHA256()), 
+        salt_length=padding.PSS._MAX_LENGTH 
+        hashes.SHA256() 
+        #Верификацыя подписипубличных ключом
+        public_key.verify()
+        signature,massage,padding.PSS()
+        mgf=padding.MGF1(hashes.SHA256()),
+        salt_lengh=padding.PSS.MAX_LENGTH
+        hashes.SHA256()
 
+    def init(self,index,previus_hash,data,public_key,blockchain):
+        self.index = index 
+        self.previous_hash = previus_hash
+        self.data = data
+        self.public_key = public_key
+        self.hash = self.calclate_hash()
+        self.blockchain.db = blockchain.db
+    def calculate_hash(self):
+        block_data = str(self.index) + self.previous_hash + str(self.data) + self.public_key + str(self.blockchain.db)
+        return hashlib.sha256(block_data.encode()).hexdigest()
+    def create_new_block(previous_block,data,pubic_key):
+        index = previous_block.index + 1
+        previous_hash = previous_block.hash
+        return blockchain.db(index,previous_hash,data,PublicKey)
+        new_block = create_new_block()
+        print(new_block.previous_hash)
+        print(new_block.hash)
     def next_block(last_block):
 
         this_index = last_block.index + 1
 
         this_timestamp = date.datetime.now()
 
-        this_data = "Hey! I'm block " + str(this_index)
+        this_data = "" + str(this_index)
 
         this_hash = last_block.hash
 
@@ -336,10 +376,11 @@ def valid_proof_hash(data,previous_hash,proof):
     def create_genesis_block(sef):
         #print Blck(0,"0",time.time(),"Genesis Block",self.difficulty)
         
-        # Начало майнинга
-        while self.hash[:difficlty]!='0'*difficlty:
-            self.nonce += 1
-            self.hash = self.calculate_hash()
+      # Начало майнинга
+     while (self,hash,nance,hash):
+      self.hash[:difficlty]!='0'*[difficlty]
+      self.nonce += 1
+      self.hash = self.calculate_hash()
     def init(self):
         self.chain = [self.create_genesis_block()]
         self.difficulty = 4
@@ -355,7 +396,7 @@ def valid_proof_hash(data,previous_hash,proof):
         new_block.mine_block(self.difficulty,self.reward)
         self.chain.append(new_block)
         
-        id ="-1:00000000000000000000000000000000000000000000000000000000"  
+        key.id ="-1:00000000000000000000000000000000000000000000000000000000"  
         new_block = block(Blockchain.get_latest_block().hash, ["Transaction1","Transaction2"],"")
         Blockchain.proof_of_work(new_block)
         
