@@ -18,7 +18,7 @@ def mine_block(previous_hash, block_number,  transactions, difficulty):
 
 # Пример использования
 previous_hash = '0000 0000 0000 0001  bd92b71ba10b66672eba9a2e02523d823e7ba44107ce4a37f4187a543c16b7e1'
-block_number = ('#17  \n' )
+block_number = ('#  \n' )
 transactions = ' 100 BTC'
 difficulty = 7 # количество нулей в начале хеша
 nonce, block_hash = mine_block(previous_hash, block_number, transactions, difficulty)
