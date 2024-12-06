@@ -8,7 +8,7 @@ import TCP
 
 def connect_to_server(client):
     try:
-        client.connect(("IPv4-адрес: 127.0.0.1", 54000)).decode('utf-8')
+        client.connect(("IPv4-адрес: 127.0.0.1:5554", 54000)).decode('utf-8')
         print("Connected to server")
     except ConnectionError as e:
         print(f"Connection error: {e}")
