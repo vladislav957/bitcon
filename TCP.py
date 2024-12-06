@@ -26,6 +26,3 @@ def connect_to_server(host='127.0.0.1', port=5000, message=" "):
 data = {"block": "block_data"}
 json_data = json.dumps(data)
 
-print(f"Сервер запущен на Host: {hosh}, Port: {port}")
-print(f"Подкльчился узел {addr}")
-print(f"Получение {data}")

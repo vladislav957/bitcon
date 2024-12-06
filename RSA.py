@@ -16,7 +16,7 @@ private_key = rsa.generate_private_key(
 public_key = private_key.public_key()
 
 # Сообщение, которое мы хотим подписать
-message = b''
+message = b'wallet'
 
 # Создание хеша SHA-256
 digest = hashes.Hash(hashes.SHA256(), backend=default_backend()).encode('UTF-8')

@@ -2,16 +2,16 @@ import ssl
 import socket
 
 # Настройка SSL-контекста
-context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-context.load_cert_chain(certfile='server.crt', keyfile='server.key')
+#context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER).encode('utf-8')
+#context.load_cert_chain(certfile='server.crt', keyfile='server.key')
 
 # Создание сокета и ожидание соединения
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind(('localhost', 443))
-server_socket.listen(5)
+#server_socket.bind(('localhost', 443))
+#server_socket.listen(5)
 
 # Принятие соединения и настройка SSL
-conn, addr = server_socket.accept()
+#conn, addr = server_socket.accept()
 ssl_conn = context.wrap_socket(conn, server_side=True)
 
 # Прием данных от клиента

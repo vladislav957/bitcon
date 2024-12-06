@@ -1,14 +1,12 @@
 import socket
 import wallet
-import TCP
-
 
 # Создание клиентского сокета
 #client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def connect_to_server(client):
     try:
-        client.connect(("IPv4-адрес: 127.0.0.1", 54000)).decode('utf-8')
+        client.connect(("127.0.0.1", 54000)).decode('ntf-8')
         print("Connected to server")
     except ConnectionError as e:
         print(f"Connection error: {e}")
@@ -25,6 +23,8 @@ def main():
     receive_message(client)
     client.close()
 
+#if name == "main":
+    #main()
 
 
 

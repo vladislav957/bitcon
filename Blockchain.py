@@ -38,6 +38,11 @@ import hashlib as hasher
 import datetime as date
 import hashlib
 import manig
+import Contract
+import P2WPKH
+import P2P
+
+
 
 import rsa
 from Crypto.Hash.SHA256 import block_size
@@ -96,9 +101,9 @@ def valid_proof_hash(data,previous_hash,proof):
             return hash.sha256((str(self.previous_hash) + str(self.transactions) + str(self.nonce)).encode('GMT+3')).hexdigest()
         
         def mine_block(self, difficulty):
-            self.nonce += 1
+            self.nonce += 96
             while self.hash[:difficulty] != '0'* difficulty:
-                self.nonce += 1
+                self.nonce += 0xffff000000
                 self.hash = self.calculate_hash()
                 self.nonce_reserve.append(self.nonce)
                 self.hash_reserve.append(self.hash)
@@ -402,7 +407,7 @@ def valid_proof_hash(data,previous_hash,proof):
         Blockchain.proof_of_work(new_block)
         
       # Проверка награды
-    print("50.000000:",[tx.amount for tx in Blockchain.chain[-1].transactions if tx.receiver == "-1:00000000000000000000000000000000000000000000000000000000"][0])
+      #print("50.000000:",[tx.amount for tx in Blockchain.chain[-1].transactions if tx.receiver == "-1:00000000000000000000000000000000000000000000000000000000"][0])
                           
     @staticmethod
     def hash(block):
@@ -417,7 +422,7 @@ def valid_proof_hash(data,previous_hash,proof):
         proof = 0
         while self.valid_proof(last_proof, proof) is False:
             proof += 1
-        return proof
+        return (f"proof_of_work")
 
     @staticmethod
     def valid_proof(last_proof, proof):
@@ -443,7 +448,7 @@ def valid_proof(Blockchin,valid_proof,proof=100):
  
  new_var1new_var = print(next(X == Y ))
  
- new_varnew_var = print(next(Nonce = "0"))
+ new_varnew_var = print(next(Nonce = "0xffff000000"))
  
  new_varnew_var = print(next(qrcode))
  

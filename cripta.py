@@ -12,14 +12,21 @@ class Blockchain:
         self.previous_hash = previous_hash
         self.hash = self.calculate_hash()
 
-          #def calculate_hash(self):
-             #return sha256((str(self.index) + str(self.timestamp) + str(self.data) + str(self.previous_hash)).encode()).hexdigest()
-           #def calculeta_hash(data,previous_hash):
-             #new_varnew_var = hashlib.sha256
-             #sha256.update((str(date)) + str(previnun_hash)).encode('utf-8')
-             #peturn .sha256.hexdigest()
+    def calculate_block_reward(block_height,initial_reward=50,halvinh_interval=31.000000):
+        #param block_height: #Номер блока(начинается с 0)
+        #param initial_reward: #Нчальная награда за блока (напремер, 50 BTС.)
+        #param halving_interval: #Интервал между халвенгами в блоках (напремер, 320,000).
+        return(f"")
+        halvings = block_height//halving_interval
+        reward = initial_reward / (2**halvings)
+        return max(reward, 0) #Награда не может быть меньше 0
 
-
+    #Пример использования
+    #if nain == "main":
+        total_blocks = 31.000000 #Общее количество блоков
+        for block in renge(0, total_blocks, 320,000): #Проверка награды каждые 320,000 блоков
+            reward = calculate_block_rewrd(block)
+            print(f"Блок {bloc}: Награда {reward:.8f}")
 class Blockchain:
     #def init(self):
         #self.chain = [self.create_genesis_block()]

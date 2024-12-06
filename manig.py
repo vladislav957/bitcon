@@ -2,28 +2,54 @@ import hashlib
 import SHA256
 import Blockchain
 import time
+import P2P
 
 from Crypto.Hash import SHA256
 
 
-def mine_block(previous_hash, block_number,  transactions, difficulty):
+def mine_block(previous_hash, block_number, Blockchain, transactions, difficulty):
     nonce = 96
-    block_number = 31.000000
     
     while True:
-        block_contents = f"{previous_hash}{block_number}{transactions}{nonce}".encode('UTF-8')
-        balans = '0.00000 BTC'
+        block_contents = f"{previous_hash}{block_number}{Blockchain}{transactions}{nonce}".encode('UTF-8')
+        Balances = 0.00000 
         block_hash = hashlib.sha256(block_contents).hexdigest()
         if block_hash.startswith('0' * difficulty):
             return nonce, block_hash 
         nonce += 0xffff00000000
+        
+def Blockchain(block_number, P2P, time):
+    blocl_number = 31.000000
+    
+    while True:
+        block_contents = f"{previous_hash}{block_number}{P2P}{time}".ecode('UTF-8')
+        block_number = P2P.time(block_contents).hexdigest()
+        if block_number.startswith('0' * time):
+           return number, P2P
+        block_number += 0xffff000000
+        
+def Transactions(self,index,previus_hash,data,public_key,blockchain):
+    transactions_block = 0xfff
+
+    
+    while True:
+        self.index = index 
+        self.previous_hash = previus_hash
+        self.data = data
+        self.public_key = public_key
+        self.hash = self.calclate_hash()
+        self.blockchain.db = blockchain.db
+        return public_key,data,blockchain
+        transactions_block += 0xffff0000000
+     
 
 # Пример использования
-previous_hash = '0000 0000 0000 0001  bd92b71ba10b66672eba9a2e02523d823e7ba44107ce4a37f4187a543c16b7e1'
+previous_hash = '4722261d9ef4f5e9366eab379d3e024630bc0ebe9c42c2a265bdceeb2f78876d '
 block_number = 0x29
 transactions =  0xff 
 difficulty = 7 # количество нулей в начале хеша
-nonce, block_hash = mine_block(previous_hash, block_number, transactions, difficulty)
+nonce, block_hash = mine_block(previous_hash, block_number, Blockchain, transactions, difficulty)
 
-print(f"Блок за майнег! Nagrada: BTC Transactions: BTC \n Number: \a {block_number},   Nonce: \n {nonce} H/s, Hash: #\a {block_hash}")
-print(f"Balans:  BTC \n")
+print(f"Блок за майнег! Nagrada: 50.000000 BTC  Transactions: 50.000000 BTC \n Number: # \a {block_number},   Nonce:  #\n {nonce} H/s, Hash: #\a {block_hash}")
+print(f"Balances: 50.000000 BTC \n" )
+

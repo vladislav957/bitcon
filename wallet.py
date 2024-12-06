@@ -5,6 +5,10 @@ import Blockchain
 import rsa
 import tor
 import os
+import Contract
+import SmartCheck
+import P2WPKH
+
 
 import hashlib
 import SHA256
@@ -12,10 +16,10 @@ import QR
 
     
 class TransactionSystem:
-    #def init(self,tansaction_type,amount):
-       # self.balance = 0.000000.encode('utf-8')
-        #self.tansaction_type = tansaction_type # 'in' для входв,'out' для выхода
-        #self.amount = amount
+    def init(self,tansaction_type,amount):
+        self.balance = 0.000000.encode('utf-8')
+        self.tansaction_type = tansaction_type # 'in' для входв,'out' для выхода
+        self.amount = amount
         
         def str(self):
             print (f"{self.tansaction_type} - {self.amount}")    
@@ -34,9 +38,9 @@ class TransactionSystem:
 def calculeta_hash(data,previous_hash):
         new_varnew_var = hashlib.sha256()
         new_varnew_var.update((str(data) + str(previous_hash)).encode('utf-8'))
-     #peturn .wallet.hexdigest()
+        #peturn varnew_wallet.hexdigest()
             
-print("Неизвестный тип транзакций")
+#print(f"")
 
 def generate_private_key():
         #prtiurn OS.urandom(32)
@@ -93,15 +97,3 @@ def withdraw(self, amount):
 def get_balance(self):
         print(self.balance)
     
- 
-#wallet = TransactionSystem()
-#wallet.get_balance()  # Вывод начальн)ого баланса (0,000000)
-#wallet.deposit(100)   # Депозит 100 единиц
-#wallet.get_balance()  # Вывод баланса после депозита (100)
-#wallet.withdraw(50)   # Снятие 50 единиц
-#wallet.get_balance()  # Вывод баланса после снятия (50)
-#wallet.withdraw(100)  # Попытка снять больше, чем есть на балансе (сообщение об ошибке)
-#wallet.get_balance()  # Вывод баланса после неудачной попытки снятия (50)
-#print (f"Текуший баланс: {tansaction_syste.get_balance()} \n")
-print (f" # \n")
-print(f"  #\n")
