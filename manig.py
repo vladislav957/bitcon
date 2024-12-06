@@ -60,6 +60,6 @@ transactions =  0xff
 difficulty = 7 # количество нулей в начале хеша
 nonce, block_hash = mine_block(previous_hash, block_number, Blockchain, transactions, difficulty)
 
-print(f"Блок за майнег! Nagrada: 50.000000 BTC  Transactions: 50.000000 BTC \n Number: # \a {block_number},   Nonce:  #\n {nonce} H/s, Hash: #\a {block_hash}")
-print(f"Balances: 50.000000 BTC \n" )
+print(f"Блок за майнег! Nagrada: 50.000000 BDR  Transactions: 50.000000 BDR \n Number: # \a {block_number},   Nonce:  #\n {nonce} H/s, Hash: #\a {block_hash}")
+print(f"Balances: 50.000000 BDR \n" )
 
