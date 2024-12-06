@@ -28,6 +28,16 @@ def Blockchain(block_number, P2P, time):
            return number, P2P
         block_number += 0xffff000000
         
+def apply_camera(char, camera):
+    return(char['x']-camera['x'], char['y']-camera['y'])
+def distance(p1, p2):
+    distX = p1['x'] - p2['x']
+    distY = p1['y'] - p2['y']
+    dist = ((distX**2) + (distY**2)) ** (1/2)
+    if dist <= (p1['r'] + p2['r']):
+        return True
+    return False
+        
 def Transactions(self,index,previus_hash,data,public_key,blockchain):
     transactions_block = 0xfff
 
