@@ -73,3 +73,16 @@ pip install -r requirements.txt
 python main.py or main.py
 
 Example of usage: After running the program, you can start mining or create transactions. Example code for adding a block:
+
+from b_hydra import Blockchain
+
+blockchain = Blockchain()
+blockchain.add_block(data="Пример транзакции")
+print(blockchain.chain)
+
+Future plans: Adding a command line interface for the management system. Implementation of the automatic complexity adjustment function. Improving performance through multi-precision. Integration with other payment services.
+
+Contacts: If you have any questions or suggestions, please contact me via GitHub Issues or write to: Kovtunvladislav96@gmail.com killnetvladislav@outlook.com
+
+
+
