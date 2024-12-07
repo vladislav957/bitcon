@@ -8,6 +8,7 @@ import os
 import Contract
 import SmartCheck
 import P2WPKH
+import IP
 
 
 import hashlib
