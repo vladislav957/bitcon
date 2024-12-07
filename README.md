@@ -54,3 +54,22 @@ print(blockchain.chain)
 # B-hydra is a peer-to-peer electronic cash register system.
 
 Key Features: Decentralized Architecture: The platform operates without a central server, ensuring complete independence. Ease of Use: Intuitive interface and easy communication with other groups. Reliability and Security: Execution Scalability: The ability to expand the network to work with specified data volumes.
+
+How to install and run : Requirements: Python 3.9 or higher Installed in dependencies (see requirements.txt) Steps: Clone the repositories
+
+Steps:
+
+1.Clone the repositories:
+
+git clone https://github.com/vladislav957/B-hydra.git
+cd B-hydra
+
+2.Set depending on:
+
+pip install -r requirements.txt
+
+3.Run the project:
+
+python main.py or main.py
+
+Example of usage: After running the program, you can start mining or create transactions. Example code for adding a block:
