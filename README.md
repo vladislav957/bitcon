@@ -1,4 +1,4 @@
-# B-hydra- это одноранговая электронная кассовая система.
+# B-hydra- это одноранговая электронная кассовая система P2P.
 
 
 Ключевые особенности :
@@ -50,7 +50,7 @@ print(blockchain.chain)
 Контакты:
 Если у вас есть вопросы или предложения, свяжитесь со мной через GitHub Issues или напишите на: Kovtunvladislav96@gmail.com killnetvladislav@outlook.com
 
-# B-hydra is a peer-to-peer electronic cash register system.
+# B-hydra is a peer-to-peer electronic cash register system P2P.
 
 Key Features: Decentralized Architecture: The platform operates without a central server, ensuring complete independence. Ease of Use: Intuitive interface and easy communication with other groups. Reliability and Security: Execution Scalability: The ability to expand the network to work with specified data volumes.
 
