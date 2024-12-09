@@ -56,7 +56,7 @@ def Transactions(self,index,previus_hash,data,public_key,blockchain):
      
 
 # Пример использования
-previous_hash = '4722261d9ef4f5e9366eab379d3e024630bc0ebe9c42c2a265bdceeb2f78876d '
+previous_hash = ' '
 block_number = 0x29
 transactions =  0xff 
 difficulty = 7 # количество нулей в начале хеша
