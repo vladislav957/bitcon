@@ -43,9 +43,47 @@ def calculeta_hash(data,previous_hash):
         new_varnew_var = hashlib.sha256()
         new_varnew_var.update((str(data) + str(previous_hash)).encode('utf-8'))
         #peturn varnew_wallet.hexdigest()
-            
-#print(f"")
+def signet_txs(block, challenge):
+    txs = block.vtx[:]
+    txs[0] = CTransactino(txs[0])
+    txs[0].vout[-1].scriptPubkey += CScript0p.ecodee_op_pushdata(SIGNET_HEADER)
+    hashes = []
+    for tx in txs:
+        tx.rehash()
+        hashes.append(ser_uint256(tx.sha256))
+        mroot = block.get_merkle_root(hashes)
 
+        sd = b""
+        sd += block.nVersion.to_bytes(4,"little",signed=True)
+        sd += ser_uint256(block.hashPrevBlock)
+        sd += ser_uint256(mroot)
+        sd += block.nTime.to_bytes(4,"little")
+
+        to_spend = CTransaction()
+        to_spend.version = 0
+        to_spend.nLockTime = 0
+        to_spend.vin = [CTxIn(COutPoint(0,0xfffffff),b"\x00" + CScriptOp.encode_op_pushdata(sd),0)]
+        to_spend.vout = [CTxOut(0, challenge)]
+        to_spend.rehash()
+
+        spend = CTransaction()
+        spend.version = 0
+        spend.nLockTime = 0
+        spend.vin = [CTxIn(COutPoint(to_spend.sha256,0),b"",0)]
+        spend.vout = [CTxOUT(0,B"\x6a")]
+        return spend, to_spend
+    
+def decode_psbt(b64psbt):
+    pabt = PSBT.from_base64(b64psbt)
+
+    assert len(psbt.tx.vin) == 1
+    assert len(psbt.tx.vout) == 1
+    assert PSBT_SIGNET_BLOCK in psbt.g.map
+
+    scriptSig = psbt.i[0].map.get(PSBT_IN_FINAL_SCRIPTSIG,b"")
+    scriptWitnese = psbt.i[0].map.get(PSBT_IN_FINAL_SCRIPTWITNESS, b"\x00")
+    
+    return from_binary(CBlock, psbt.g.map[PSBT_SIGNET_BLOCK]),ser_string(scriptSig) + scriptWitness
 def generate_private_key():
         #prtiurn OS.urandom(32)
  def privat_key_to_public_key(private_key):
