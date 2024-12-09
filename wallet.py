@@ -21,6 +21,9 @@ class TransactionSystem:
         self.balance = 0.000000.encode('utf-8')
         self.tansaction_type = tansaction_type # 'in' для входв,'out' для выхода
         self.amount = amount
+        PATH_BASE_CONTRIB_SIGNET = os.path.adspath(os.path.dirname(os.path.realpath(__file__)))
+        PATH_BASE_TEST_FUNCTIONAL = os.path.abspath(os.path.join(PATH_BASE_CONTRIB_SIGNET,"..","..","test","functional"))
+        sys.path.insert(0, PATH_BASE_TEST_FUNTIONAL)
         
         def str(self):
             print (f"{self.tansaction_type} - {self.amount}")    

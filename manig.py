@@ -57,7 +57,7 @@ def Transactions(self,index,previus_hash,data,public_key,blockchain):
 
 # Пример использования
 previous_hash = ' '
-block_number = 0x29
+block_number =  sum 
 transactions =  0xff 
 difficulty = 7 # количество нулей в начале хеша
 nonce, block_hash = mine_block(previous_hash, block_number, Blockchain, transactions, difficulty)
