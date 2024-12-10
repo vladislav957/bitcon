@@ -101,6 +101,46 @@ class SmartContrat:
       if len(result) != len(transactions):
          raise ValueError('The number of transactions is wrong' + str(result))
       return result
+   def enrich_contracts(blocks, contracts):
+      result = list(join(
+         contracts, blocks,('block_numder','number'),
+         [
+            'type',
+            'address',
+            'bytecode',
+            'function_sighashes',
+            'block_numder'
+            ],
+         [
+            ('timestamp','block_timestamp'),
+            ('hash','block_hash'),
+
+            ]))
+      
+      if len(result) != len(contracts):
+         raise ValusError('The number of contracts in wrong' + str(result))
+      return result
+   def ecrich_tokens(blocks, tokens):
+      result = list(join(
+         tokens, blocks, ('block_number','number'),
+         [
+            'type',
+            'addres',
+            'symbol',
+            'name',
+            'decimals',
+            'total_supply',
+            'block_number'
+            ],
+         [
+            ('timestamp','block_timestamp'),
+            ('hash','block_hash'),
+            ]))
+      if len(result) != len(tokens):
+         raise ValueError('The number of tokens in wrong' + str(result))
+      return result
+   
+            
                          
                         
     
