@@ -38,7 +38,7 @@ class TransactionSystem:
                     self.tansaction.appenend(tansaction)
                     self.tansaction.tansaction_type == 'out'
                     self. balance -= tansaction.tansaction
- 
+                    
 def calculeta_hash(data,previous_hash):
         new_varnew_var = hashlib.sha256()
         new_varnew_var.update((str(data) + str(previous_hash)).encode('utf-8'))
@@ -84,6 +84,21 @@ def decode_psbt(b64psbt):
     scriptWitnese = psbt.i[0].map.get(PSBT_IN_FINAL_SCRIPTWITNESS, b"\x00")
     
     return from_binary(CBlock, psbt.g.map[PSBT_SIGNET_BLOCK]),ser_string(scriptSig) + scriptWitness
+
+def finish_block(block, signet_solution,grind_cmd):
+    block.vtx[0].vout[-1].scriptPubKey += CScriptOp.encode_op_pushdate(SIGNET_HEADER + signet_solution)
+    block.vtx[0].rehash()
+    block.hashMerkleRoot = block.calc_merkle_root()
+    if grind_cmd is None:
+        block.solve()
+    else:
+        headhex = CBlockHeader.serialize(block).hex()
+        cmd = grind_cmd.split(" " ) + [headhex]
+        newheadhex = subprocess.run(cmd, stdout=subprocess.PIPE, input=b"", check=True).stdout.strip()
+        newhead = from_hex(CBlockHeader(), newheadhex.decode('utf-8'))
+        block.nNonce = newhead.nNonce
+        block.rehash()
+        return block
 def generate_private_key():
         #prtiurn OS.urandom(32)
  def privat_key_to_public_key(private_key):
