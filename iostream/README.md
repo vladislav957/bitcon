@@ -61,3 +61,69 @@ B-Hydra была создана для обеспечения децентрал
 1. Клонируйте репозиторий:
    `bash
    git clone https://github.com/username/b-hydra.git
+
+
+   # B-Hydra: A Resilient Blockchain Network for Global Disasters
+
+   B-Hydra is a decentralized blockchain system that can operate during a global internet shutdown. It ensures the continuation of transactions, mining, and network operations thanks to Device-to-Device (D2D) technology, making it ideal for use in emergency situations.
+
+   ---
+
+   ## Key Features
+1. Autonomous Operation:
+- Does not require connection to centralized servers or the global Internet.
+- Nodes communicate with each other directly using D2D (Wi-Fi Direct, Bluetooth or local IP networks).
+
+- 2. Network stability:
+- Uses a mesh network to transfer data between nodes.
+- Guarantees blockchain synchronization even when individual groups of nodes are isolated.
+
+- 3. Decentralized consensus:
+- Implements a hybrid consensus algorithm for the local network (e.g. PoW and Gossip Protocol).
+- Nodes independently find each other and support the operation of the blockchain.
+
+- 4. Mining support:
+- Nodes continue mining blocks even in offline conditions.
+- Energy-efficient architecture for operation on devices with limited resources.
+
+- 5. Security:
+- All transactions and data are encrypted using modern cryptographic methods (RSA, AES).
+- The system is resistant to Sybil attacks due to the node identification mechanism.
+
+- 6. Ready for recovery:
+- Once the Internet is restored, the system automatically synchronizes with the global blockchain.
+- Nodes save local backups of data.
+
+- ---
+
+## How does it work?
+
+1. Communication between nodes:
+- Nodes use D2D technologies (Wi-Fi Direct, Bluetooth) for communication in the absence of the Internet.
+- Mesh network automatically detects the nearest neighbors.
+
+  2. Data transmission:
+- Information distribution is implemented via Gossip Protocol, which ensures high network stability.
+
+- 3. Mining: - Local nodes distribute mining tasks, maintaining efficiency even in small networks.
+ 
+  4. Synchr
+  5. onization:
+- When the connection is restored, the network automatically synchronizes local changes with the global blockchain.
+
+- ---
+
+## Project goals
+
+B-Hydra was created to provide a decentralized economy that can survive disasters and internet shutdowns. The main goals are:
+- Maintaining network functionality even in extreme conditions.
+  - Support for microtransactions and local mining.
+- Strengthening trust in decentralized systems.
+
+- ---
+
+## Installation
+
+1. Clone the repository:
+`bash
+git clone https://github.com/username/b-hydra.git
