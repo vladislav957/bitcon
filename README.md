@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 python main.py или main.py
 
-4.Основний алгоритом SHA-512
+4.Основной алгоритом SHA-512
 
 Пример использования :
 После запуска программы вы можете начать майнинг или создать транзакции. Пример кода для добавления блока:
@@ -73,7 +73,7 @@ pip install -r requirements.txt
 
 python main.py or main.py
 
-4.Basic SHA-512 algorithm
+4.Basic algorithm SHA-512
 
 Example of usage: After running the program, you can start mining or create transactions. Example code for adding a block:
 
