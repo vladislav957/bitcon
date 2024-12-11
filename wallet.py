@@ -40,7 +40,7 @@ class TransactionSystem:
                     self. balance -= tansaction.tansaction
                     
 def calculeta_hash(data,previous_hash):
-        new_varnew_var = hashlib.sha256()
+        new_varnew_var = hashlib.sha512()
         new_varnew_var.update((str(data) + str(previous_hash)).encode('utf-8'))
         #peturn varnew_wallet.hexdigest()
 def signet_txs(block, challenge):
@@ -55,8 +55,8 @@ def signet_txs(block, challenge):
 
         sd = b""
         sd += block.nVersion.to_bytes(4,"little",signed=True)
-        sd += ser_uint256(block.hashPrevBlock)
-        sd += ser_uint256(mroot)
+        sd += ser_uint512(block.hashPrevBlock)
+        sd += ser_uint512(mroot)
         sd += block.nTime.to_bytes(4,"little")
 
         to_spend = CTransaction()

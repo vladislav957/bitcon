@@ -1,12 +1,12 @@
 from concurrent.futures import ThreadPoolExecutor 
 import hashlib
-import SHA256
+import SHA512
 import Blockchain
 import time
 import P2P
 import IP
 
-from Crypto.Hash import SHA256
+from Crypto.Hash import SHA512
 
 
 def mine_block(previous_hash, block_number, Blockchain, transactions, difficulty):
@@ -15,7 +15,7 @@ def mine_block(previous_hash, block_number, Blockchain, transactions, difficulty
     while True:
         block_contents = f"{previous_hash}{block_number}{Blockchain}{transactions}{nonce}".encode('UTF-8')
         Balances = 0.00000 
-        block_hash = hashlib.sha256(block_contents).hexdigest()
+        block_hash = hashlib.sha512(block_contents).hexdigest()
         if block_hash.startswith('0' * difficulty):
             return nonce, block_hash 
         nonce += 0xffff00000000
