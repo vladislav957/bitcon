@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 3.Запустите проект:
 
-python main.py или main.py
+python maing.py или maing.py
 
 4.Основной алгоритом SHA-512
 
@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 3.Run the project:
 
-python main.py or main.py
+python maing.py or maing.py
 
 4.Basic algorithm SHA-512
 
