@@ -53,6 +53,21 @@ def Transactions(self,index,previus_hash,data,public_key,blockchain):
         self.blockchain.db = blockchain.db
         return public_key,data,blockchain
         transactions_block += 0xffff0000000
+
+def  static_PyObject(self,static,PyOject):
+
+    while True:
+     #static pyObject *
+     spam_system(PyObject *self, PyObject *args)
+     {
+     #const char *command;
+     #int sts;
+
+     #if (!PyArg_ParseTuple(args, "s", &command))
+     #return NULL;
+     self := PySpam_System(command)
+      #return PyLong_FromLong(self);
+     }
      
 
 # Пример использования
