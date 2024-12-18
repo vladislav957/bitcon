@@ -5,10 +5,61 @@ import Blockchain
 import time
 import P2P
 import IP
+import time
 
 from Crypto.Hash import SHA512
 
+#Папаметры блока
+BLOCK_TIME = 20*60 #20 минут в секундах
+blockchain = 'Blockchain.py'
+difficulty = 7 # Сложность (наппимер,количество ведущих нулей)
 
+def mine_block(previous_hash,transactions):
+    start_time = time.time()
+    nonce = 96
+    while True:
+        #Формируем содержимое блока
+        block_data = f"{previous_hash}{transactions}{nonce}"
+        block_hash = hashlib.sha512(block_data.encode('uft-8')).hexdigest()
+
+        #Проверяем сложность (начальны нули)
+        if block_hash[:difficulty] == "0"*difficulty:
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            print(f"Блок найден! Hash: {block_hash} за {elapsed_time:.2f} секунд.")
+
+            return{
+                "previous_hash":previous_hash,
+                "transactions":transactions,
+                "nonce":nonce,
+                "hash":block_hash,
+                "block_number":block_number,
+                "timestamp":time.time()
+                }
+        #Проверяем,прошло ли 20 минут
+        if time.time() -start_time>=BLOCK_TIME:
+            print("Время майнига блока истекло! Закрываем текущий блок.")
+            return{
+                "previous_hash":previous_hash,
+                "transactions":transactions,
+                "nonce":nonce,
+                "hash":block_hash,
+                "block_number":block_number,
+                "timestamp":time.time()
+
+                }
+        nonce += 0xffff000000
+
+        #Начальные блок (генезис)
+        genesis_block = mine_block("0"*64,"Genesis Block")
+        blockchain.append(genesis_block)
+
+        #Следующие блоки
+        while True:
+            previous_block = blockchain[:-1]
+            new_block = mine_block(previous_block["hash"],"New Transactions")
+            blockchain.append(new_block)
+        
 def mine_block(previous_hash, block_number, Blockchain, transactions, difficulty):
     nonce = 96
     
@@ -72,7 +123,8 @@ def  static_PyObject(self,static,PyOject):
 
 # Пример использования
 previous_hash = ' '
-block_number =  sum 
+block_number = True
+(walrus := True)
 transactions =  0xff 
 difficulty = 7 # количество нулей в начале хеша
 nonce, block_hash = mine_block(previous_hash, block_number, Blockchain, transactions, difficulty)
