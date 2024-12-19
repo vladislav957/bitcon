@@ -125,7 +125,7 @@ def  static_PyObject(self,static,PyOject):
 previous_hash = ' '
 block_number = True
 (walrus := True)
-transactions =  0xff 
+transactions =  'Blockchain.py','wallet.py' 
 difficulty = 7 # количество нулей в начале хеша
 nonce, block_hash = mine_block(previous_hash, block_number, Blockchain, transactions, difficulty)
 
